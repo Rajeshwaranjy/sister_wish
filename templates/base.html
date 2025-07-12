@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>HBD Sister</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='confetti.js') }}" defer></script>
+  <style>
+    audio {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body class="text-center">
+
+  <!-- 🎵 Persistent Background Music -->
+  <audio id="bg-music" autoplay loop>
+    <source src="{{ url_for('static', filename='music.mp3') }}" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  {% block content %}{% endblock %}
+
+</body>
+</html>

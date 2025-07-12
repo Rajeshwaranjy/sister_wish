@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Wish</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../static/style.css">
+  <script src="../static/confetti.js" defer></script>
+  <style>
+    .slide { display: none; }
+    .active-slide { display: block; animation: fadeIn 2s ease-in-out; }
+  </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4 text-center relative">
+
+  <!-- 🎶 Background music -->
+  <audio autoplay loop>
+    <source src="../static/Annana-Thaalaattum.mp3" type="audio/mpeg">
+  </audio>
+<center>
+  <!-- 📸 Slideshow -->
+  <div class="w-80 md:w-96 rounded-2xl shadow-xl overflow-hidden mb-6">
+    <img src="../static/1.jpg" class="slide rounded-xl w-full" alt="Photo 1" height="350" width="200">
+    <img src="../static/2.jpg" class="slide rounded-xl w-full" alt="Photo 2" height="350" width="200">
+    <img src="../static/3.jpg" class="slide rounded-xl w-full" alt="Photo 3" height="350" width="200">
+    <img src="../static/4.jpg" class="slide rounded-xl w-full" alt="Photo 4" height="350" width="200">
+    <img src="../static/5.jpg" class="slide rounded-xl w-full" alt="Photo 5" height="350" width="200">
+    <img src="../static/6.jpg" class="slide rounded-xl w-full" alt="Photo 6" height="350" width="200">
+    <img src="../static/7.jpg" class="slide rounded-xl w-full" alt="Photo 7" height="350" width="200">
+    <img src="../static/8.jpg" class="slide rounded-xl w-full" alt="Photo 8" height="350" width="200">
+    <img src="../static/9.jpg" class="slide rounded-xl w-full" alt="Photo 9" height="350" width="200">
+    <img src="../static/10.jpg" class="slide rounded-xl w-full" alt="Photo 10" height="350" width="200">
+    <img src="../static/11.jpg" class="slide rounded-xl w-full" alt="Photo 11" height="350" width="200">
+    <img src="../static/12.jpg" class="slide rounded-xl w-full" alt="Photo 12" height="350" width="200">
+  </div>
+
+  <!-- ✨ Quote -->
+  <h2 class="text-xl md:text-2xl font-semibold animate-fadeIn mb-6 max-w-2xl">
+    "உறவென்று சொல்ல ஒரு பெயர் இல்லாவிட்டாலும், என் இதயத்தில் நீ என் உடன் பிறந்த சகோதரி." <br>
+    "உனது சிரிப்பு என் மனதிற்கு சந்தோஷம்."
+  </h2>
+
+  <!-- 🔘 Button to Next Page -->
+  <a href="/message" class="bg-white text-pink-600 font-bold py-3 px-6 rounded-full shadow-lg hover:scale-105 transition">
+    adhutha page uh 💌
+  </a>
+</center>
+  <!-- 🎬 Slideshow Script -->
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+
+    function showSlides() {
+      slides.forEach(slide => slide.classList.remove("active-slide"));
+      slideIndex = (slideIndex + 1) % slides.length;
+      slides[slideIndex].classList.add("active-slide");
+    }
+
+    slides[0].classList.add("active-slide"); // Show first slide on load
+    setInterval(showSlides, 3000); // Change every 3 seconds
+  </script>
+
+</body>
+</html>

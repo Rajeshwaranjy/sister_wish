@@ -1,0 +1,45 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+  }  
+body {
+    background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    color: white;
+    overflow-x: hidden;
+  }
+  
+  @keyframes gradientShift {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+  
+  .animate-fadeIn {
+    animation: fadeIn 2s ease-out forwards;
+    opacity: 0;
+  }
+  
+  @keyframes fadeIn {
+    to {opacity: 1; transform: scale(1);}
+    from {opacity: 0; transform: scale(0.8);}
+  }
+  
+  .confetti {
+    position: absolute;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    background-color: hsl(calc(360 * var(--i)), 70%, 60%);
+    animation: fall linear infinite;
+  }
+  
+  @keyframes fall {
+    to {
+      transform: translateY(100vh) rotate(360deg);
+    }
+  }
+  
